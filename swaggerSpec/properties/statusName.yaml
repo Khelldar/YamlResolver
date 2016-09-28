@@ -1,0 +1,9 @@
+type: string
+description: The name of the case status
+enum: [
+"Created",
+"Completed",
+"Incident",
+"Mitigated",
+"Resolved",
+]

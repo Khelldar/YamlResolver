@@ -1,0 +1,16 @@
+npm-debug.log
+node_modules
+api
+vendor
+debug
+gomon_spawn
+swaggerToServer
+SwaggerToServer
+testGorillaMux
+sts
+
+test-reports.xml
+.idea
+doc
+.DS_Store
+.npmrc

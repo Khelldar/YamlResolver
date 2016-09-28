@@ -1,0 +1,175 @@
+swagger: '2.0'
+##################################################################################################
+#                               API INFORMATION                                                  #
+##################################################################################################
+info:
+  title: Case Service API
+  version: v1
+  contact:
+    url: http://github.schq.secious.com/WebUI/CaseService/wiki/Public-API-Docs
+  description: Logrhythm Case Service API
+
+##################################################################################################
+#                         HOST/BASEPATH/CONTENT-TYPES                                            #
+##################################################################################################
+host: localhost:3000
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /api
+# perhaps this is the return type for responses? Makes sense for a simple API that just returns data in JSON form
+produces:
+  - application/json
+
+
+##################################################################################################
+#                                         SECURITY                                               #
+##################################################################################################
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+##################################################################################################
+#                                         PATHS                                                  #
+##################################################################################################
+
+paths:
+
+  #########################
+  #     UPSERT A CASE    #
+  ########################
+  /cases:
+    x-swagger-router-controller: case
+    ### POST /cases ###
+    post:
+      operationId: upsertCase
+      security:
+        - Bearer: []
+      description: |
+        To update a specific case, you can provide id, caseNumber, or externalId in the body of the request.
+        Those fields will be searched in that order to try and find an existing case. If no matches are found using id and caseNumber, the system returns a "404 not found" error.
+        If no match is found when an externalId is the only identifier provided, a new case with that externalId will be created.
+        If a match on id or number is found AND an externalId is specified, the request is treated as an update request where the externalId provided will replace the old one
+      summary: upsert a case
+      parameters:
+        - name: body
+          in: body
+          description: the body of the case which includes the id of a case (if doing update) and either all the attributes (for a create) or some attributes (for an update)
+          required: true
+          schema:
+            $ref: 'requestBodies/upsertCase.yaml'
+      responses:
+        201:
+          description: The newly created case
+          schema:
+            title: 'Complete Case'
+            $ref: '#/definitions/complete_case'
+          # examples:
+          #     $ref: 'responses/examples/complete_case.example.yaml'
+        200:
+          description: The upserted case
+          schema:
+            title: 'Complete Case'
+            $ref: '#/definitions/complete_case'
+          # examples:
+          #     $ref: 'responses/examples/complete_case.example.yaml'
+
+
+
+  #########################
+  #      GET A CASE      #
+  ########################
+  /cases/{id}:
+    x-swagger-router-controller: case
+    ### GET /cases/{id} ###
+    get:
+      operationId: getCaseDetails
+      security:
+        - Bearer: []
+      description: Get the details of a case by id
+      summary: Get the details of a case by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          $ref: 'properties/id.yaml'
+      responses:
+        200:
+          description: The returned case
+          schema:
+            title: 'Complete Case'
+            $ref: '#/definitions/complete_case'
+          # examples:
+          #     $ref: 'responses/examples/complete_case.example.yaml'
+
+
+
+  ##################################
+  #    CHANGE STATUS OF A CASE     #
+  ##################################
+
+  /cases/{id}/actions/changeStatus:
+    x-swagger-router-controller: case
+    ### PUT /cases/{id}/actions/changeStatus
+    put:
+      operationId: changeStatus
+      security:
+        - Bearer: []
+      description: Change the state of a case referenced by id
+      summary: Change the state of a case referenced by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          $ref: 'properties/id.yaml'
+        - name: body
+          in: body
+          description: A body that contains the new statusName to be given to the case with id id
+          required: true
+          schema:
+            $ref: 'requestBodies/changeStatus.yaml'
+      responses:
+        200:
+          description: The updated case
+          schema:
+            title: 'Complete Case'
+            $ref: '#/definitions/complete_case'
+          # examples:
+          #     $ref: 'responses/examples/complete_case.example.yaml'
+
+
+
+  #######################################
+  #       ADD EVIDENCE TO A CASE        #
+  #######################################
+  /cases/{id}/evidence/note:
+    x-swagger-router-controller: case
+    ### POST /cases/{id}/evidence/note
+    post:
+      operationId: createNote
+      security:
+        - Bearer: []
+      description: add a note to a case referenced by id
+      summary: add a note to a case referenced by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          $ref: 'properties/id.yaml'
+        - name: body
+          in: body
+          description: A body that contains the new statusName to be given to the case with id id
+          required: true
+          schema:
+            $ref: 'requestBodies/addNote.yaml'
+      responses:
+        200:
+          description: An empty body is returned
+          schema: {}
+
+definitions:
+  $ref: 'definitions.yaml'

@@ -1,0 +1,3 @@
+type: string
+description: summary of the case
+maxLength: 4000

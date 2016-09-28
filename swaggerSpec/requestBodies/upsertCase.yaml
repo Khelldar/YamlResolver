@@ -1,0 +1,15 @@
+type: object
+required: [id, externalId]
+properties:
+  priority:
+    $ref: '../properties/priority.yaml'
+  summary:
+    $ref: '../properties/summary.yaml'
+  number:
+    $ref: '../properties/number.yaml'
+  name:
+    $ref: '../properties/name.yaml'
+  externalId:
+    $ref: '../properties/externalId.yaml'
+  id:
+    $ref: '../properties/id.yaml'

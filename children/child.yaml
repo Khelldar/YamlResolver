@@ -1,0 +1,4 @@
+name: Michael
+age: 58
+child:
+  $ref: '../grandChild.yaml'

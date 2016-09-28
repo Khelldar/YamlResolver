@@ -1,0 +1,9 @@
+"application/json" : {
+  "id": "BBB41E18-8EB1-403B-A301-038E54AA76C5",
+  "number": 1,
+  "externalId": "SomeOtherSystem-123",
+  "name": "My First Case",
+  "statusName": "Created",
+  "priority": 3,
+  "summary": "You can put up to 4000 chars in the summary."
+}

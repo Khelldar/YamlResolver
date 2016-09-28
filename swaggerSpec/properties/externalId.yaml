@@ -1,0 +1,3 @@
+type: string
+description: custom defined unique identifier, can be thought of like a foreign key
+maxLength: 80

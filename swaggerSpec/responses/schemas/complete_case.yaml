@@ -1,0 +1,16 @@
+required: [priority, summary, statusName, number, name, externalId, id]
+properties:
+  priority:
+    $ref: '../../properties/priority.yaml'
+  summary:
+    $ref: '../../properties/summary.yaml'
+  statusName:
+    $ref: '../../properties/statusName.yaml'
+  number:
+    $ref: '../../properties/number.yaml'
+  name:
+    $ref: '../../properties/name.yaml'
+  externalId:
+    $ref: '../../properties/externalId.yaml'
+  id:
+    $ref: '../../properties/id.yaml'

@@ -1,0 +1,5 @@
+type: number
+description: priority of the case
+enum: [
+1,2,3,4,5
+]
