@@ -1,6 +1,22 @@
-hash: ad0cb89c6070801fe4c4bb9ad8f835902cc43aa7c6279d094f50e726a518774a
-updated: 2016-09-28T13:10:58.087401479-06:00
+hash: af9e03f55543820e765b8f06e831fdf8928170988b87dca3ce03ed09338f31da
+updated: 2016-09-29T09:34:21.087677116-06:00
 imports:
+- name: github.com/jtolds/gls
+  version: 8ddce2a84170772b95dd5d576c48d517b22cac63
+- name: github.com/smartystreets/assertions
+  version: 2063fd1cc7c975db70502811a34b06ad034ccdf2
+- name: github.com/smartystreets/goconvey
+  version: 7befa7fd6e2e8ca28d2b94f2d39111929904b08d
+- name: golang.org/x/crypto
+  version: a20de3fa94e069ec699987416679230d72e030a3
+  repo: https://golang.org/x/crypto
+- name: golang.org/x/net
+  version: 9f0e377a8a39bb99ff03459d77c135a0042878f0
+- name: golang.org/x/text
+  version: a7c023693a94aedd6b6df43ae7526bfe9d2b7d22
+  repo: https://golang.org/x/text
+- name: golang.org/x/tools
+  version: fc2b74b64ef08c618146ebc92062f6499db5314c
 - name: gopkg.in/yaml.v2
   version: a5b47d31c556af34a302ce5d659e6fea44d90de0
 devImports: []

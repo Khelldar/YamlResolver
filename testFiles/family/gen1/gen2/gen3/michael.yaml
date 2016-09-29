@@ -1,0 +1,7 @@
+name: Michael
+age: 59
+children:
+- $ref: "./gen4/chris.yaml"
+- $ref: "./gen4/erin.yaml"
+- $ref: "./gen4/sally.yaml"
+- $ref: "./gen4/elizabeth.yaml"

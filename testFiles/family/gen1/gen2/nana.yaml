@@ -1,0 +1,8 @@
+name: Nana
+age: 75
+husband:
+  $ref: "./pops.yaml"
+children:
+- $ref: "./gen3/michael.yaml"
+- $ref: "./gen3/bev.yaml"
+- $ref: "./gen3/carol.yaml"

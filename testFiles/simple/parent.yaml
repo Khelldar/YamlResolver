@@ -1,0 +1,4 @@
+name: Nana
+age: 75
+child:
+  '$ref': "./child.yaml"

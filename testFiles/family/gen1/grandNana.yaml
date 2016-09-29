@@ -1,0 +1,4 @@
+name: Grand Nana
+age: 92
+children:
+- $ref: "./gen2/nana.yaml"

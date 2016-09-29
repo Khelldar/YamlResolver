@@ -1,0 +1,4 @@
+name: Michael
+age: 58
+parent:
+  $ref: ./parent.yaml

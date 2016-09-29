@@ -1,3 +1,4 @@
 package: github.com/khelldar/JsonResolver
 import:
 - package: gopkg.in/yaml.v2
+- package: github.com/smartystreets/goconvey

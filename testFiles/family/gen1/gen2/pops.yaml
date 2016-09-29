@@ -1,0 +1,6 @@
+name: Pops
+age: 80
+children:
+- $ref: "./gen3/michael.yaml"
+- $ref: "./gen3/bev.yaml"
+- $ref: "./gen3/carol.yaml"

@@ -1,0 +1,5 @@
+name: Nana
+age: 75
+children:
+- "$ref": "./child1.yaml"
+- $ref: ./child2.yaml
