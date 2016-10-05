@@ -1,7 +1,6 @@
 package yamlResolver
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 
@@ -34,8 +33,6 @@ func TestSpec(t *testing.T) {
 			err := resolver.LoadFile("./testFiles/simple/parent.yaml")
 			So(err, ShouldBeNil)
 			So(resolver.String(), ShouldEqual, expectedSimple)
-			err = resolver.SaveFile("test.yaml")
-			fmt.Println(err)
 		})
 
 		Convey("simpleArray", func() {
